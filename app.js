@@ -298,7 +298,7 @@ function draw() {
     synth.modulationIndex.value = slider.value()
   synth.harmonicity.value = slider2.value()
   distort.set({ distortion: disButton.value() });
- synth.frequency.value = resButton.value();
+ //synth.frequency.value = resButton.value();
  // feedbackDelay.delayTime.value=10;
   //feedbackDelay.feedback.value = 10;
  if(showtext==true){
