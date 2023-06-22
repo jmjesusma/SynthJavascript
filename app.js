@@ -161,7 +161,7 @@ synth.connect(filter);
 
 
 function setup() {
-  createCanvas(1342.28, 800);//tamaño de la ventana
+  createCanvas(1342, 800);//tamaño de la ventana
   bg = loadImage('img/base.png');
   pB = loadImage('img/B.png');
   pL = loadImage('img/L.png');
@@ -258,15 +258,12 @@ function setup() {
 
 function draw() {
   //The code in the draw() block writes our text to the screen.
-  synth.modulationIndex.value = slider.value()
-  synth.harmonicity.value = slider2.value()
-  distort.set({ distortion: disButton.value() });
- synth.frequency.value = resButton.value();
+  
  //c sampler.frequency.value = resButton.value();
   //filter.frequency=resButton.value();
   background(backColor);
   background(bg);
-  frameRate(20); 
+  frameRate(60); 
 
   // draw function is called repeatedly by the engine
  
@@ -298,6 +295,10 @@ function draw() {
       
       
     }
+    synth.modulationIndex.value = slider.value()
+  synth.harmonicity.value = slider2.value()
+  distort.set({ distortion: disButton.value() });
+ synth.frequency.value = resButton.value();
  // feedbackDelay.delayTime.value=10;
   //feedbackDelay.feedback.value = 10;
  if(showtext==true){
@@ -397,8 +398,6 @@ function keyPressed() {//teclas a presionar
     synth.triggerAttackRelease("C"+oct, 1);
     sampler.triggerAttackRelease("C"+oct, 1);
     image(pB, bPosX, bPosY, 72, 140);
-    
-    
   } else if ((keyCode == 88)||(pressed==2)) {
     synth.triggerAttackRelease("D"+oct, 1);
     sampler.triggerAttackRelease("D"+oct, 1);
@@ -424,11 +423,11 @@ function keyPressed() {//teclas a presionar
     synth.triggerAttackRelease("B"+oct, 1);
     image(pB, bPosX+544, bPosY, 72, 140);
   } else if ((keyCode == 188)||(pressed==8)) {
-    sampler.triggerAttackRelease("C"+oct, 1);
+    sampler.triggerAttackRelease("C"+oct2, 1);
     synth.triggerAttackRelease("C"+oct2, 1);
     image(pB, bPosX+635, bPosY, 72, 140);
   } else if ((keyCode == 190)||(pressed==9)) {
-    sampler.triggerAttackRelease("D"+oct, 1);
+    sampler.triggerAttackRelease("D"+oct2, 1);
     synth.triggerAttackRelease("D"+oct2, 1); 
     image(pB, bPosX+728, bPosY, 72, 140);
   }else if ((keyCode == 189)||(pressed==10)) {
@@ -525,11 +524,77 @@ function mousePressed() {
     var dx = mouseX - x;
     var dy = mouseY - y;
     offsetAngle = atan2(dy, dx) - angle;
-  }*/if (dist(mouseX, mouseY, bPosX+90, bPosY) < 90) {
+  }*/if (dist(mouseX, mouseY, bPosX+90, 20+bPosY) < 80) {
     pressed=1;
 }
-if (dist(mouseX, mouseY, bPosX+180, bPosY) < 90) {
-  pressed=2;//NO PONER ELSE
+if (dist(mouseX, mouseY, bPosX+150,20+ bPosY) < 80) {
+  pressed=2;//
+}
+if (dist(mouseX, mouseY, bPosX+220, 20+bPosY) < 80) {
+  pressed=3;//
+}
+if ((dist(mouseX, mouseY, bPosX+350, 20+bPosY) < 80)) {
+  pressed=4;//  
+}
+if (dist(mouseX, mouseY, bPosX+400,20+ bPosY) < 80) {
+  pressed=5;
+}
+if (dist(mouseX, mouseY, bPosX+520,20+ bPosY) < 80) {
+  pressed=6;
+}
+if (dist(mouseX, mouseY, bPosX+550, 20+bPosY) < 80) {
+  pressed=7;
+}
+if (dist(mouseX, mouseY, bPosX+650, 20+bPosY) < 80) {
+  pressed=8;
+}
+if (dist(mouseX, mouseY, bPosX+750,20+ bPosY) < 80) {
+  pressed=9;
+}
+if (dist(mouseX, mouseY, bPosX+850,20+ bPosY) < 80) {
+  pressed=10;
+}
+if (dist(mouseX, mouseY, bPosX+950, 20+bPosY) < 80) {
+  pressed=11;
+}
+if (dist(mouseX, mouseY, bPosX+1050, 20+bPosY) < 80) {
+  pressed=12;
+}
+if (dist(mouseX, mouseY, bPosX+1150, 20+bPosY) < 80) {
+  pressed=13;
+}
+if (dist(mouseX, mouseY, bPosX+1250, 20+bPosY) < 80) {
+  pressed=14;
+}
+if (dist(mouseX, mouseY, bPosX+60, bPosY-40) < 40) {
+  pressed=15;
+}
+if (dist(mouseX, mouseY, bPosX+150, bPosY-40) < 40) {
+  pressed=16;
+}
+if (dist(mouseX, mouseY, bPosX+350, bPosY-40) < 40) {
+  pressed=17;
+}
+if (dist(mouseX, mouseY, bPosX+440, bPosY-40) < 40) {
+  pressed=18;
+}
+if (dist(mouseX, mouseY, bPosX+510, bPosY-40) < 40) {
+  pressed=19;
+}
+if (dist(mouseX, mouseY, bPosX+710, bPosY-40) < 40) {
+  pressed=20;
+}
+if (dist(mouseX, mouseY, bPosX+810, bPosY-40) < 40) {
+  pressed=21;
+}
+if (dist(mouseX, mouseY, bPosX+1010, bPosY-40) < 40) {
+  pressed=22;
+}
+if (dist(mouseX, mouseY, bPosX+1100, bPosY-40) < 40) {
+  pressed=23;
+}
+if (dist(mouseX, mouseY, bPosX+1210, bPosY-40) < 40) {
+  pressed=24;
 }
 }
 function changeFilter(){
